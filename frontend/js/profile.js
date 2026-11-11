@@ -8,7 +8,7 @@
   function render() {
     const session=read(SESSION_KEY,null), grid=document.querySelector("#my-listings"), feedback=document.querySelector("#profile-feedback");
     if(!session){document.querySelector("#profile-edit-form").hidden=true;document.querySelector("#profile-display-name").textContent="You're browsing as a guest";document.querySelector("#profile-status").textContent="Create a profile to manage your listings.";grid.innerHTML='<div class="profile-empty">No profile session found. <a href="login.html">Create your profile</a>.</div>';return;}
-    document.querySelector("#profile-display-name").textContent=session.name||"RentRelay member";
+    document.querySelector("#profile-display-name").textContent=session.name||"Utileo member";
     document.querySelector("#profile-email").textContent=session.email||"";
     document.querySelector("#profile-phone").textContent=session.phone||"";
     document.querySelector("#profile-name-input").value=session.name||"";
@@ -21,7 +21,7 @@
   }
   document.addEventListener("DOMContentLoaded",()=>{
     const form=document.querySelector("#profile-edit-form");
-    if(form){form.addEventListener("submit",async event=>{event.preventDefault();const session=read(SESSION_KEY,null);if(!session)return;const name=document.querySelector("#profile-name-input").value.trim();const file=document.querySelector("#profile-photo-input").files[0];if(!name){return;}if(file){if(!["image/jpeg","image/png","image/webp"].includes(file.type)||file.size>8*1024*1024){document.querySelector("#profile-feedback").textContent="Choose a JPG, PNG or WebP image under 8 MB.";return;}try{session.profilePicData=await compress(file);}catch(error){document.querySelector("#profile-feedback").textContent=error.message;return;}}session.name=name;localStorage.setItem(SESSION_KEY,JSON.stringify(session));document.querySelector("#profile-feedback").textContent="Profile updated.";const navLink=document.querySelector("[data-account-link]");if(typeof updateRentRelayAccountLink==="function")updateRentRelayAccountLink(navLink);render();});}
+    if(form){form.addEventListener("submit",async event=>{event.preventDefault();const session=read(SESSION_KEY,null);if(!session)return;const name=document.querySelector("#profile-name-input").value.trim();const file=document.querySelector("#profile-photo-input").files[0];if(!name){return;}if(file){if(!["image/jpeg","image/png","image/webp"].includes(file.type)||file.size>8*1024*1024){document.querySelector("#profile-feedback").textContent="Choose a JPG, PNG or WebP image under 8 MB.";return;}try{session.profilePicData=await compress(file);}catch(error){document.querySelector("#profile-feedback").textContent=error.message;return;}}session.name=name;localStorage.setItem(SESSION_KEY,JSON.stringify(session));document.querySelector("#profile-feedback").textContent="Profile updated.";const navLink=document.querySelector("[data-account-link]");if(typeof updateUtileoAccountLink==="function")updateUtileoAccountLink(navLink);render();});}
     document.querySelector("#remove-profile-photo")?.addEventListener("click",()=>{const session=read(SESSION_KEY,null);if(!session)return;session.profilePicData="";localStorage.setItem(SESSION_KEY,JSON.stringify(session));document.querySelector("#profile-photo-input").value="";render();});
     render();
   });
