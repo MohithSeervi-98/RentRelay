@@ -1,22 +1,19 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sign in | RentRelay</title><link rel="stylesheet" href="../css/style.css"></head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Create your profile | RentRelay</title><link rel="stylesheet" href="../css/style.css"></head>
 <body class="auth-page">
 <header class="site-header"><a class="brand" href="../index.html">RentRelay<span>.</span></a><nav><a href="explore.html">Keep exploring</a></nav></header>
-<main class="auth-shell">
-  <section class="auth-card">
-    <p class="eyebrow">YOUR CAMPUS COMMUNITY</p>
-    <h1>One quick step<br>before you <em>continue.</em></h1>
-    <p class="auth-intro" id="auth-intro">Sign in when you're ready to list or borrow. You can explore RentRelay without an account.</p>
-    <div class="auth-context" id="auth-context" hidden></div>
-    <form id="demo-login-form">
-      <label for="student-email">Student email</label>
-      <input id="student-email" name="email" type="email" autocomplete="email" required placeholder="you@college.edu">
-      <button class="button primary" type="submit">Continue <span>↗</span></button>
-      <p class="auth-disclaimer">Prototype preview only: this currently demonstrates the guest-to-sign-in flow. Email verification and secure account authentication are not connected yet. Do not enter a password.</p>
-      <p class="form-message" id="auth-message" role="status"></p>
-    </form>
-    <a class="text-link auth-back" href="explore.html">← Back to exploring</a>
-  </section>
-</main>
-<script src="../js/auth.js"></script>
-</body></html>
+<main class="auth-shell"><section class="auth-card">
+  <p class="eyebrow">YOUR CAMPUS COMMUNITY</p><h1>Create your<br><em>RentRelay profile.</em></h1>
+  <p class="auth-intro" id="auth-intro">Create a profile now, or keep browsing as a guest. You'll only need a profile to list or request an item.</p>
+  <div class="auth-context" id="auth-context" hidden></div>
+  <form id="demo-login-form">
+    <label for="full-name">Full name</label><input id="full-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="70" required placeholder="Your name">
+    <label for="student-email">Email address</label><input id="student-email" name="email" type="email" autocomplete="email" required placeholder="you@college.edu">
+    <label for="phone-number">Phone number</label><input id="phone-number" name="phone" type="tel" inputmode="tel" autocomplete="tel" pattern="[+0-9 ()-]{10,18}" minlength="10" maxlength="18" required placeholder="+91 98765 43210">
+    <button class="button primary" type="submit">Create profile <span>↗</span></button>
+    <p class="auth-disclaimer">Prototype only: details are saved in this browser. Email and phone OTP verification, secure sign-in and account recovery are not connected. Do not enter sensitive information.</p>
+    <p class="form-message" id="auth-message" role="status"></p>
+  </form>
+  <a class="text-link auth-back" href="explore.html">← Continue as guest</a>
+</section></main>
+<script src="../js/auth.js"></script><script src="../js/account-nav.js"></script></body></html>
