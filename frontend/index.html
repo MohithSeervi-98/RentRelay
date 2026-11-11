@@ -1,24 +1,61 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RentRelay | Campus Rentals</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RentRelay helps students rent useful things from one another on campus.">
+  <title>RentRelay — Your campus, shared.</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html">RentRelay<span>.</span></a>
-    <nav><a href="pages/explore.html">Explore</a><a href="pages/login.html">Log in</a><a class="nav-cta" href="pages/register.html">Get started</a></nav>
-  </header>
-  <main class="hero">
-    <p class="eyebrow">THE CAMPUS RENTAL MARKETPLACE</p>
-    <h1>Borrow what you need.<br><span>Rent what you own.</span></h1>
-    <p class="hero-copy">A simpler way for students to rent useful things from other students on campus.</p>
-    <div class="hero-actions"><a class="button primary" href="pages/explore.html">Explore items</a><a class="button secondary" href="pages/create-listing.html">List an item</a></div>
-    <p class="notice">Student project concept — pilot availability to be confirmed.</p>
-  </main>
-  <footer>© 2026 RentRelay · Campus sharing, made simpler.</footer>
-  <script src="js/main.js"></script>
-</body>
-</html>
+<body class="home-page">
+<header class="site-header">
+  <a class="brand" href="index.html">rentrelay<span>.</span></a>
+  <nav><a href="pages/explore.html">Explore</a><a href="#categories">Categories</a><a href="#how-it-works">How it works</a><a class="nav-cta" href="pages/create-listing.html">List an item <span>↗</span></a></nav>
+</header>
+<main>
+  <section class="home-hero">
+    <div class="hero-copy-block">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> THE STUDENT-TO-STUDENT MARKETPLACE</p>
+      <h1>Good things<br>should get <em>around.</em></h1>
+      <p class="hero-intro">The things you need might already be on your campus. Rent useful stuff from fellow students—or earn from the things you own.</p>
+      <div class="hero-actions"><a class="button primary" href="pages/explore.html">Explore the marketplace <span>↗</span></a><a class="text-link" href="pages/create-listing.html">Have something to lend? <span>→</span></a></div>
+      <div class="hero-footnote"><span class="avatar-stack"><i>M</i><i>R</i><i>A</i></span><span>Built around sharing, right where you study.</span></div>
+    </div>
+    <div class="hero-art" aria-label="Illustration of useful campus items">
+      <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+      <div class="art-note note-top"><span>YOUR CAMPUS</span><b>One shared community.</b></div>
+      <div class="floating-item item-book"><span>✳</span><b>STUDY</b></div>
+      <div class="floating-item item-headphone"><span>◖</span><b>PLAY</b></div>
+      <div class="floating-item item-camera"><span>◎</span><b>CREATE</b></div>
+      <div class="art-center"><span>R</span><small>RENT · RETURN · REPEAT</small></div>
+      <div class="art-note note-bottom"><b>Less buying.</b><span>More making use.</span></div>
+    </div>
+  </section>
+
+  <section class="category-section" id="categories">
+    <div class="section-top"><div><p class="eyebrow">FIND YOUR SOMETHING</p><h2>Browse by category<span>.</span></h2></div><a class="text-link" href="pages/explore.html">View everything <span>→</span></a></div>
+    <div class="category-grid">
+      <a class="category-card cat-study" href="pages/category-study.html"><span class="category-icon">✎</span><span class="category-count">01 / LEARN</span><h3>Books & Study</h3><p>Textbooks, calculators, notes and more.</p><span class="category-arrow">↗</span></a>
+      <a class="category-card cat-tech" href="pages/category-electronics.html"><span class="category-icon">⌁</span><span class="category-count">02 / CONNECT</span><h3>Electronics</h3><p>Gadgets and everyday tech essentials.</p><span class="category-arrow">↗</span></a>
+      <a class="category-card cat-game" href="pages/category-gaming.html"><span class="category-icon">✳</span><span class="category-count">03 / PLAY</span><h3>Gaming</h3><p>Controllers, games and gear for game night.</p><span class="category-arrow">↗</span></a>
+      <a class="category-card cat-sport" href="pages/category-sports.html"><span class="category-icon">↗</span><span class="category-count">04 / MOVE</span><h3>Sports</h3><p>Equipment for your next match or workout.</p><span class="category-arrow">↗</span></a>
+      <a class="category-card cat-hostel" href="pages/category-kitchen.html"><span class="category-icon">⌂</span><span class="category-count">05 / SETTLE IN</span><h3>Kitchen & Hostel</h3><p>Useful things for everyday campus life.</p><span class="category-arrow">↗</span></a>
+      <a class="category-card cat-style" href="pages/category-clothing.html"><span class="category-icon">✦</span><span class="category-count">06 / STYLE</span><h3>Clothing</h3><p>Occasion wear and pieces worth sharing.</p><span class="category-arrow">↗</span></a>
+      <a class="category-card cat-other" href="pages/category-other.html"><span class="category-icon">＋</span><span class="category-count">07 / DISCOVER</span><h3>Other finds</h3><p>Something useful that doesn't fit a box.</p><span class="category-arrow">↗</span></a>
+    </div>
+  </section>
+
+  <section class="how-section" id="how-it-works">
+    <div class="how-intro"><p class="eyebrow">STRAIGHTFORWARD BY DESIGN</p><h2>Access over ownership<span>.</span></h2><p>Make better use of what your campus already has.</p></div>
+    <div class="steps">
+      <article><span>01</span><div><h3>Find what you need</h3><p>Browse categories and discover items listed by students around you.</p></div></article>
+      <article><span>02</span><div><h3>Connect and arrange</h3><p>Agree on rental details and a convenient campus handover point.</p></div></article>
+      <article><span>03</span><div><h3>Use it. Return it.</h3><p>Make use of the item, then return it as agreed.</p></div></article>
+    </div>
+  </section>
+
+  <section class="trust-strip"><div><p class="eyebrow">BUILT FOR CAMPUS LIFE</p><h2>Closer community.<br><em>Smarter sharing.</em></h2></div><p>RentRelay is designed around student communities, practical handovers and clear item details. Trust features will be introduced and tested as the pilot develops.</p></section>
+  <section class="closing-cta"><p class="eyebrow">MAKE YOUR STUFF GO FURTHER</p><h2>Have something<br>someone needs?</h2><a class="button light-button" href="pages/create-listing.html">List your first item <span>↗</span></a></section>
+</main>
+<footer class="home-footer"><a class="brand" href="index.html">rentrelay<span>.</span></a><span>Campus sharing, made simpler.</span><span>© 2026 RentRelay</span></footer>
+<script src="js/main.js"></script>
+</body></html>
