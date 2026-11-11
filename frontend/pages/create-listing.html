@@ -1,4 +1,22 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Create-Listing | RentRelay</title><link rel="stylesheet" href="../css/style.css"></head>
-<body><header class="site-header"><a class="brand" href="../index.html">RentRelay<span>.</span></a><nav><a href="explore.html">Explore</a><a href="login.html">Log in</a></nav></header>
-<main class="hero"><p class="eyebrow">RENTRELAY</p><h1>Create Listing</h1><p class="hero-copy">Placeholder page. Functionality will be added during the relevant development phase.</p></main><script src="../js/main.js"></script></body></html>\n
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>List an item | RentRelay</title><link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<header class="site-header"><a class="brand" href="../index.html">RentRelay<span>.</span></a><nav><a href="explore.html">Explore</a><a class="nav-cta" href="create-listing.html">List an item</a></nav></header>
+<main class="page-shell">
+  <div class="page-heading"><p class="eyebrow">SHARE WITH YOUR CAMPUS</p><h1>List an item</h1><p>Add something you own and are comfortable lending to another student.</p></div>
+  <form class="panel" id="listing-form">
+    <div class="form-grid">
+      <div class="field full"><label for="title">Item name *</label><input id="title" name="title" required maxlength="70" placeholder="e.g. Scientific calculator"></div>
+      <div class="field"><label for="category">Category *</label><select id="category" name="category" required><option value="">Choose category</option><option>Books & study</option><option>Electronics</option><option>Gaming</option><option>Sports</option><option>Kitchen & hostel</option><option>Clothing</option><option>Other</option></select></div>
+      <div class="field"><label for="price">Rental price (₹ / day) *</label><input id="price" name="price" type="number" min="1" max="100000" required placeholder="e.g. 30"></div>
+      <div class="field"><label for="location">Campus pickup area *</label><input id="location" name="location" required maxlength="80" placeholder="e.g. Hostel reception"></div>
+      <div class="field"><label for="condition">Item condition</label><select id="condition" name="condition"><option>Good</option><option>Like new</option><option>Fair</option></select></div>
+      <div class="field full"><label for="description">Description</label><textarea id="description" name="description" maxlength="500" placeholder="Mention defects, included accessories and rental requirements."></textarea></div>
+    </div>
+    <div class="form-actions"><button class="button primary" type="submit">Save listing</button><a class="button secondary" href="explore.html">Cancel</a></div>
+    <p class="form-message" id="form-message" role="status"></p>
+  </form>
+</main>
+<script src="../js/listings.js"></script>
+</body></html>
