@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Request an item | RentRelay</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><header class="site-header"><a class="brand" href="../index.html">RentRelay<span>.</span></a><nav><a href="create-listing.html">Back to listing</a><a href="explore.html">Explore</a></nav></header>
+<main class="page-shell"><div class="page-heading"><p class="eyebrow">HELP US EXPAND THE CATALOGUE</p><h1>Can't find your item?</h1><p>Tell us what you're trying to list. This request won't create a public listing; it helps the RentRelay team decide which catalogue items to add.</p></div>
+<form class="panel" id="catalogue-request-form"><div class="form-grid">
+<div class="field"><label for="requested-category">Category *</label><select id="requested-category" required><option value="">Choose category</option><option>Books & Study</option><option>Electronics</option><option>Gaming</option><option>Sports</option><option>Kitchen & Hostel</option><option>Clothing</option><option>Other</option></select></div>
+<div class="field"><label for="requested-item">Item name *</label><input id="requested-item" required maxlength="80" placeholder="What item should we add?"></div>
+<div class="field full"><label for="request-reason">Additional details (optional)</label><textarea id="request-reason" maxlength="300" placeholder="Brand, model or common use..."></textarea></div></div>
+<div class="form-actions"><button class="button primary" type="submit">Submit catalogue request</button><a class="button secondary" href="create-listing.html">Cancel</a></div><p class="form-message" id="request-feedback" role="status"></p></form></main>
+<script>
+document.querySelector("#catalogue-request-form").addEventListener("submit",event=>{event.preventDefault();const form=event.currentTarget;if(!form.reportValidity())return;const requests=JSON.parse(localStorage.getItem("rentrelay_catalogue_requests_v1")||"[]");requests.push({category:document.querySelector("#requested-category").value,item:document.querySelector("#requested-item").value.trim(),details:document.querySelector("#request-reason").value.trim(),createdAt:new Date().toISOString()});localStorage.setItem("rentrelay_catalogue_requests_v1",JSON.stringify(requests));form.reset();document.querySelector("#request-feedback").textContent="Request saved in this browser prototype. It has not been sent to the RentRelay team yet.";});
+</script></body></html>
