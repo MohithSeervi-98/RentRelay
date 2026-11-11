@@ -1,5 +1,5 @@
-// Adds a direct account entry to each RentRelay page navigation.
-function updateRentRelayAccountLink(link) {
+// Adds a direct account entry to each Utileo page navigation.
+function updateUtileoAccountLink(link) {
   if (!link) return;
   const session = (() => { try { return JSON.parse(localStorage.getItem("rentrelay_demo_session_v1") || "null"); } catch { return null; } })();
   const inPages = location.pathname.includes("/pages/");
@@ -23,5 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".site-header nav"); if (!nav) return;
   let link = nav.querySelector("[data-account-link]");
   if (!link) { link = document.createElement("a"); link.dataset.accountLink = "true"; nav.appendChild(link); }
-  updateRentRelayAccountLink(link);
+  updateUtileoAccountLink(link);
 });
