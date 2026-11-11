@@ -1,4 +1,22 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | RentRelay</title><link rel="stylesheet" href="../css/style.css"></head>
-<body><header class="site-header"><a class="brand" href="../index.html">RentRelay<span>.</span></a><nav><a href="explore.html">Explore</a><a href="login.html">Log in</a></nav></header>
-<main class="hero"><p class="eyebrow">RENTRELAY</p><h1>Login</h1><p class="hero-copy">Placeholder page. Functionality will be added during the relevant development phase.</p></main><script src="../js/main.js"></script></body></html>\n
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sign in | RentRelay</title><link rel="stylesheet" href="../css/style.css"></head>
+<body class="auth-page">
+<header class="site-header"><a class="brand" href="../index.html">RentRelay<span>.</span></a><nav><a href="explore.html">Keep exploring</a></nav></header>
+<main class="auth-shell">
+  <section class="auth-card">
+    <p class="eyebrow">YOUR CAMPUS COMMUNITY</p>
+    <h1>One quick step<br>before you <em>continue.</em></h1>
+    <p class="auth-intro" id="auth-intro">Sign in when you're ready to list or borrow. You can explore RentRelay without an account.</p>
+    <div class="auth-context" id="auth-context" hidden></div>
+    <form id="demo-login-form">
+      <label for="student-email">Student email</label>
+      <input id="student-email" name="email" type="email" autocomplete="email" required placeholder="you@college.edu">
+      <button class="button primary" type="submit">Continue <span>↗</span></button>
+      <p class="auth-disclaimer">Prototype preview only: this currently demonstrates the guest-to-sign-in flow. Email verification and secure account authentication are not connected yet. Do not enter a password.</p>
+      <p class="form-message" id="auth-message" role="status"></p>
+    </form>
+    <a class="text-link auth-back" href="explore.html">← Back to exploring</a>
+  </section>
+</main>
+<script src="../js/auth.js"></script>
+</body></html>
