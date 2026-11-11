@@ -1,4 +1,4 @@
-// RentRelay shared frontend helpers.
+// Utileo shared frontend helpers.
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", event => {
@@ -16,5 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const link = document.createElement("a");
   link.dataset.accountLink = "true";
   nav.appendChild(link);
-  updateRentRelayAccountLink(link, false);
+  updateUtileoAccountLink(link, false);
 });
