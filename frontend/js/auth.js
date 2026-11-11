@@ -215,8 +215,14 @@
     loginForm.addEventListener("submit", event => {
       event.preventDefault();
       if (!loginForm.reportValidity()) return;
-      const email = new FormData(loginForm).get("email").trim();
-      localStorage.setItem(DEMO_SESSION_KEY, JSON.stringify({ email, demo: true, createdAt: new Date().toISOString() }));
+      const formData = new FormData(loginForm);
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim().toLowerCase();
+      const phone = String(formData.get("phone") || "").trim();
+      const existing = JSON.parse(localStorage.getItem(DEMO_SESSION_KEY) || "null");
+      const profilePicData = existing && existing.email === email ? (existing.profilePicData || "") : "";
+      const session = { name, email, phone, profilePicData, demo: true, createdAt: new Date().toISOString() };
+      localStorage.setItem(DEMO_SESSION_KEY, JSON.stringify(session));
       if (intent === "list" && pendingListing) {
         try {
           const listing = JSON.parse(pendingListing);
