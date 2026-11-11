@@ -13,3 +13,18 @@ h1{font:800 clamp(42px,7vw,72px)/1.08 'Manrope',sans-serif;letter-spacing:-3px}h
 .primary{color:white;background:var(--blue)}.secondary{color:var(--ink);background:white;border:1px solid #dce3ee}
 .notice{margin-top:35px;color:#8791a3;font-size:12px}footer{padding:24px 8%;color:var(--muted);background:white;border-top:1px solid #e8edf4;font-size:12px}
 @media(max-width:600px){.site-header{padding:18px 6%;align-items:flex-start;gap:16px;flex-direction:column}nav{gap:16px;flex-wrap:wrap}.hero{width:88%;padding-top:75px}h1{letter-spacing:-2px}.hero-copy{font-size:16px}}
+
+
+/* --- RentRelay listing prototype --- */
+.page-shell{width:min(1100px,90%);margin:48px auto 80px}
+.page-heading{margin-bottom:28px}.page-heading h1{font-size:clamp(32px,5vw,48px);letter-spacing:-1.8px}.page-heading p{margin-top:10px;color:var(--muted);line-height:1.6}
+.panel{max-width:720px;padding:28px;background:#fff;border:1px solid #e6ebf2;border-radius:16px;box-shadow:0 12px 35px #14213d0a}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:700}
+.field input,.field select,.field textarea,.search-input{width:100%;padding:12px 13px;border:1px solid #dce3ee;border-radius:9px;background:#fff;color:var(--ink);font:inherit;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus,.search-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2457a71a}
+.field textarea{min-height:95px;resize:vertical}.form-actions{display:flex;gap:12px;align-items:center;margin-top:22px}
+.form-message{margin-top:14px;color:var(--teal);font-size:14px}.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.toolbar .search-input{max-width:360px}.listing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.listing-card{overflow:hidden;background:#fff;border:1px solid #e6ebf2;border-radius:14px}.listing-visual{height:145px;display:grid;place-items:center;background:#eaf0f8;color:var(--blue);font-size:42px}.listing-content{padding:17px}.listing-content h3{font:700 18px 'Manrope',sans-serif}.listing-meta{margin:7px 0;color:var(--muted);font-size:13px}.listing-price{margin-top:13px;font-weight:700;color:var(--blue)}.empty-state{padding:32px;border:1px dashed #cbd5e1;border-radius:12px;color:var(--muted);text-align:center;grid-column:1/-1}
+@media(max-width:650px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:20px}.page-shell{margin-top:32px}}
