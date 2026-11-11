@@ -4,19 +4,21 @@
 <body>
 <header class="site-header"><a class="brand" href="../index.html">RentRelay<span>.</span></a><nav><a href="explore.html">Explore</a><a class="nav-cta" href="create-listing.html">List an item</a></nav></header>
 <main class="page-shell">
-  <div class="page-heading"><p class="eyebrow">SHARE WITH YOUR CAMPUS</p><h1>List an item</h1><p>Add something you own and are comfortable lending to another student. You can complete the form before signing in.</p></div>
+  <div class="page-heading"><p class="eyebrow">SHARE WITH YOUR CAMPUS</p><h1>List an item</h1><p>Choose from the RentRelay catalogue, add a real photo and set your rental details. You can complete the form before signing in.</p></div>
   <form class="panel" id="listing-form">
     <div class="form-grid">
-      <div class="field full"><label for="title">Item name *</label><input id="title" name="title" required maxlength="70" placeholder="e.g. Scientific calculator"></div>
-      <div class="field"><label for="category">Category *</label><select id="category" name="category" required><option value="">Choose category</option><option>Books & Study</option><option>Electronics</option><option>Gaming</option><option>Sports</option><option>Kitchen & Hostel</option><option>Clothing</option><option>Other</option></select></div>
+      <div class="field"><label for="category">1. Choose a category *</label><select id="category" name="category" required><option value="">Select category</option><option>Books & Study</option><option>Electronics</option><option>Gaming</option><option>Sports</option><option>Kitchen & Hostel</option><option>Clothing</option><option>Other</option></select></div>
+      <div class="field"><label for="title">2. Choose an item *</label><select id="title" name="title" required disabled><option value="">Select a category first</option></select></div>
+      <div class="field full"><label for="photo">3. Upload item photo *</label><input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required><small class="field-hint">Use a clear photo of the actual item. JPG, PNG or WebP; maximum 8 MB.</small><div class="photo-preview-wrap" id="photo-preview-wrap" hidden><img id="photo-preview" alt="Preview of your item"><button type="button" class="text-link" id="remove-photo">Remove photo</button></div></div>
       <div class="field"><label for="price">Rental price (₹ / day) *</label><input id="price" name="price" type="number" min="1" max="100000" required placeholder="e.g. 30"></div>
       <div class="field"><label for="location">Campus pickup area *</label><input id="location" name="location" required maxlength="80" placeholder="e.g. Hostel reception"></div>
-      <div class="field"><label for="condition">Item condition</label><select id="condition" name="condition"><option>Good</option><option>Like new</option><option>Fair</option></select></div>
-      <div class="field full"><label for="description">Description</label><textarea id="description" name="description" maxlength="500" placeholder="Mention defects, included accessories and rental requirements."></textarea></div>
+      <div class="field"><label for="condition">Item condition *</label><select id="condition" name="condition" required><option>Good</option><option>Like new</option><option>Fair</option><option>Well used</option></select></div>
+      <div class="field full"><label for="description">Description</label><textarea id="description" name="description" maxlength="500" placeholder="Mention size/model, defects, included accessories and rental requirements."></textarea></div>
+      <div class="field full catalogue-request"><p>Can't find your item?</p><a href="request-item.html">Request an item to be added to our catalogue ↗</a></div>
     </div>
     <div class="form-actions"><button class="button primary" type="submit">Continue to sign in</button><a class="button secondary" href="explore.html">Cancel</a></div>
     <p class="form-message" id="form-message" role="status"></p>
   </form>
 </main>
-<script src="../js/listings.js"></script><script src="../js/auth.js"></script>
+<script src="../js/auth.js"></script>
 </body></html>
