@@ -6,13 +6,13 @@
   function escapeHtml(value) { return String(value || "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" })[c]); }
   function renderListings(container, searchTerm = "") {
     const term = searchTerm.trim().toLowerCase();
-    const filtered = getListings().filter(item => [item.title,item.category,item.description,item.location].some(value => String(value || "").toLowerCase().includes(term)));
+    const filtered = getListings().filter(item => [item.title,item.category,item.description].some(value => String(value || "").toLowerCase().includes(term)));
     if (!filtered.length) { container.innerHTML = '<div class="empty-state">No listings found yet. Be the first to list an item.</div>'; return; }
     container.innerHTML = filtered.map(item => `
       <article class="listing-card">
         ${item.photoData ? `<img class="listing-photo" src="${item.photoData}" alt="Photo of ${escapeHtml(item.title)}">` : '<div class="listing-visual" aria-hidden="true">▧</div>'}
         <div class="listing-content"><h3>${escapeHtml(item.title)}</h3>
-          <p class="listing-meta">${escapeHtml(item.category)} · ${escapeHtml(item.location)}</p>
+          <p class="listing-meta">${escapeHtml(item.category)} · ${escapeHtml(item.condition || "Condition not specified")}</p>
           <p>${escapeHtml(item.description || "No description provided.")}</p>
           <p class="listing-price">₹${Number(item.price).toFixed(0)} / day</p>
           <button class="button primary borrow-button" type="button" data-borrow-id="${escapeHtml(item.id)}">Borrow this item</button>
