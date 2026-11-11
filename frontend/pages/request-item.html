@@ -9,4 +9,4 @@
 <div class="form-actions"><button class="button primary" type="submit">Submit catalogue request</button><a class="button secondary" href="create-listing.html">Cancel</a></div><p class="form-message" id="request-feedback" role="status"></p></form></main>
 <script>
 document.querySelector("#catalogue-request-form").addEventListener("submit",event=>{event.preventDefault();const form=event.currentTarget;if(!form.reportValidity())return;const requests=JSON.parse(localStorage.getItem("rentrelay_catalogue_requests_v1")||"[]");requests.push({category:document.querySelector("#requested-category").value,item:document.querySelector("#requested-item").value.trim(),details:document.querySelector("#request-reason").value.trim(),createdAt:new Date().toISOString()});localStorage.setItem("rentrelay_catalogue_requests_v1",JSON.stringify(requests));form.reset();document.querySelector("#request-feedback").textContent="Request saved in this browser prototype. It has not been sent to the RentRelay team yet.";});
-</script></body></html>
+</script><script src="../js/account-nav.js"></script></body></html>
