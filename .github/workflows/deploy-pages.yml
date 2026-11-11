@@ -1,4 +1,4 @@
-name: Deploy RentRelay to GitHub Pages
+name: Deploy Utileo to GitHub Pages
 
 on:
   push:
