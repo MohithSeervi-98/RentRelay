@@ -10,3 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".site-header nav");
+  if (!nav || nav.querySelector("[data-account-link]")) return;
+  const link = document.createElement("a");
+  link.dataset.accountLink = "true";
+  nav.appendChild(link);
+  updateRentRelayAccountLink(link, false);
+});
