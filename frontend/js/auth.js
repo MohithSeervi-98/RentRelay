@@ -181,6 +181,7 @@
         submit.textContent = "Preparing your listing...";
         try {
           const listing = Object.fromEntries(new FormData(listingForm).entries());
+          delete listing.photo;
           listing.photoData = await compressImage(file);
           localStorage.setItem(PENDING_LISTING_KEY, JSON.stringify(listing));
           location.href = "login.html?intent=list";
