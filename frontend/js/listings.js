@@ -35,6 +35,10 @@
     })[char]);
   }
   document.addEventListener("DOMContentLoaded", () => {
+    const feedback = document.querySelector("#explore-feedback");
+    const params = new URLSearchParams(location.search);
+    if (feedback && params.get("listed") === "1") feedback.textContent = "Your listing has been added to this browser prototype.";
+    if (feedback && params.get("request") === "demo") feedback.textContent = "Demo borrow request recorded in this browser only. No lender has been notified.";
     const container = document.querySelector("#listing-grid");
     if (container) {
       const search = document.querySelector("#listing-search");
