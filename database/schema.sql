@@ -1,0 +1,1 @@
+-- Define users, listings, bookings, payments, condition checks and disputes here.\n

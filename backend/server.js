@@ -1,0 +1,1 @@
+// Backend placeholder. Add Node.js + Express when custom server-side APIs are needed.\n

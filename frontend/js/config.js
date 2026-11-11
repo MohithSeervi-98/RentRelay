@@ -1,0 +1,1 @@
+// Add public frontend configuration here when connecting Supabase. Never place secret keys in browser code.\n
