@@ -6,7 +6,15 @@
 <main class="page-shell">
   <a class="back-link" href="explore.html">← Back to Explore</a>
   <div class="page-heading"><p class="eyebrow">YOUR RENTRELAY ACCOUNT</p><h1>My profile</h1><p>Manage your account and the items you've listed.</p></div>
-  <section class="profile-summary"><strong id="profile-email">Loading profile...</strong><p id="profile-status">Your browser-only prototype account.</p></section>
+  <section class="profile-summary">
+    <div class="profile-edit-layout"><div class="profile-avatar-large" id="profile-avatar-preview">R</div>
+      <div class="profile-edit-fields"><strong id="profile-display-name">Loading profile...</strong><p id="profile-email"></p><p id="profile-phone"></p><p id="profile-status">Your browser-only prototype account.</p></div></div>
+    <form id="profile-edit-form" class="profile-edit-form">
+      <div class="field"><label for="profile-name-input">Display name</label><input id="profile-name-input" name="name" required maxlength="70"></div>
+      <div class="field"><label for="profile-photo-input">Profile picture (optional)</label><input id="profile-photo-input" name="profilePhoto" type="file" accept="image/jpeg,image/png,image/webp"><small class="field-hint">JPG, PNG or WebP. Image is resized before saving in this browser.</small></div>
+      <div class="profile-edit-actions"><button class="button primary" type="submit">Save profile</button><button class="button secondary" id="remove-profile-photo" type="button">Remove photo</button></div>
+    </form>
+  </section>
   <div class="section-top"><div><p class="eyebrow">YOUR INVENTORY</p><h2>My listings<span>.</span></h2></div><a class="button primary" href="create-listing.html">+ List an item</a></div>
   <p class="form-message" id="profile-feedback" role="status"></p>
   <section class="listing-grid" id="my-listings" aria-live="polite"></section>
